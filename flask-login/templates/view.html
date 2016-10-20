@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block view %}
+{% if user.is_anonymous == True %}
+<div class="column">
+    <div class="column is-half is-offset-one-quarter">
+        <div class="notification is-primary">
+            Please login to user tools
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="column">
+    <div class="column is-half">
+        <form method="POST" action="">
+          <p class="control">
+            <label class="label-left">Input R</label>
+            <p class="control">
+                <input class="input" type="text" placeholder="Input R" name="r">
+            </p>
+            <button class="button is-primary" type="submit">Equals</button>
+          </p>
+        </form>
+        {% if s != None %}
+            {{ s }}
+        {% endif %}
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

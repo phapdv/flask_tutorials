@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block view %}
+<div class="column is-3">
+    <form method="POST" action="">
+      <p class="control has-addons">
+        <input class="input" type="text" placeholder="Input R" name="r">
+        <button class="button is-primary" type="submit">Equals</button>
+      </p>
+    </form>
+        {% if s != None %}
+            {{ s }}
+        {% endif %}
+
+</div>
+{% endblock %}

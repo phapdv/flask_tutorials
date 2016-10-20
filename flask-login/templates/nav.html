@@ -1,0 +1,61 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <nav class="nav">
+    <div class="nav-left">
+        <a class="nav-item is-brand" href="{{ url_for('index') }}">
+            <img src="#" alt="Rental Management">
+        </a>
+    </div>
+
+    <div class="nav-center">
+        <a class="nav-item" href="#">
+            <span class="icon">
+                <i class="fa fa-github"></i>
+            </span>
+        </a>
+        <a class="nav-item" href="#">
+            <span class="icon">
+                <i class="fa fa-twitter"></i>
+            </span>
+        </a>
+    </div>
+
+    <span class="nav-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+    </span>
+
+    <div class="nav-right nav-menu">
+        <a class="nav-item" href="#">
+            Home
+        </a>
+        <a class="nav-item" href="#">
+            Documentation
+        </a>
+        <a class="nav-item" href="#">
+            Blog
+        </a>
+        {% if user.is_anonymous == True %}
+          <span class="nav-item">
+            <a class="button is-primary" href=" {{ url_for('register') }}">
+                <span>Register</span>
+            </a>
+            <a class="button is-primary" href="{{ url_for('login') }}">
+                <span>Login</span>
+            </a>
+          </span>
+        {% else %}
+            <span class="nav-item">
+              <a class="button is-primary">
+                  <span>Logged in as {{ user.username }}</span>
+              </a>
+            </span>
+            <span class="nav-item">
+              <a class="button is-primary" href=" {{ url_for('logout') }}">
+                  <span>Logout</span>
+              </a>
+            </span>
+        {% endif %}
+    </div>
+  </nav>
+</nav>

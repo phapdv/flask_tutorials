@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block view %}
+<form method="POST" action="">
+  <p class="control has-addons">
+    <input class="input" type="text" placeholder="Input R" name="r">
+    <!-- {{ form.r }} -->
+    <button class="button is-primary" type="submit">Equals</button>
+    {% if s != None %}
+        {{ s }}
+    {% endif %}
+
+  </p>
+</form>
+{% endblock %}
