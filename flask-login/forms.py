@@ -3,7 +3,6 @@
 
 
 import wtforms as wtf
-from model import db, Users
 
 
 class InputForm(wtf.Form):

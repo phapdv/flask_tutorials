@@ -21,10 +21,15 @@
   <body>
     {% include "nav.html" %}
     <section class="section">
+      <div class="hero">
+        <span></span>
+      </div>
       <div class="container">
         {% for message in get_flashed_messages() %}
-        <div class="column is-3">
-          <p class="notification is-danger">{{ message }}</p>
+        <div class="column is-half is-offset-one-quarter">
+          <div class="notification is-danger">
+            {{ message }}
+          </div>
         </div>
         {% endfor %}
         {% block view %}{% endblock %}

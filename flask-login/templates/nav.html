@@ -35,7 +35,7 @@
         <a class="nav-item" href="#">
             Blog
         </a>
-        {% if user.is_anonymous == True %}
+        {% if user.is_authenticated == False %}
           <span class="nav-item">
             <a class="button is-primary" href=" {{ url_for('register') }}">
                 <span>Register</span>

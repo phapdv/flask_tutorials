@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block view %}
-{% if user.is_anonymous == True %}
+{% if user.is_authenticated == False %}
 <div class="column">
     <div class="column is-half is-offset-one-quarter">
         <div class="notification is-primary">

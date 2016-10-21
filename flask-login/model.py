@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 from flask_sqlalchemy import SQLAlchemy
-from werkzeug import check_password_hash
 from app import app
 
 db = SQLAlchemy(app)
@@ -23,9 +22,6 @@ class Users(db.Model):
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
-
-    def check_password(self, pw):
-        return check_password_hash(self.password, pw)
 
     def is_authenticated(self):
         return True
