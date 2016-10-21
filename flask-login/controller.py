@@ -3,6 +3,8 @@
 
 from flask import render_template, request, flash, redirect, url_for
 from flask_login import LoginManager, current_user, login_user, logout_user, login_required
+from sqlalchemy.exc import IntegrityError
+
 from compute import compute
 from model import db, Users
 from forms import InputForm, RegisterForm, LoginForm
@@ -44,7 +46,7 @@ def register():
             try:
                 db.session.add(userlogin)
                 db.session.commit()
-            except sqlalchemy.exc.IntegrityError:
+            except IntegrityError:
                 flash('Username or email already signed up')
                 return redirect(url_for('index'))
             login_user(userlogin)
